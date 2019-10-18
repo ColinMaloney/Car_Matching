@@ -1,5 +1,5 @@
 import flask
-from flask import request, jsonify
+from flask import Flask, request, render_template,jsonify
 from flask_restful import Resource, Api
 
 app = flask.Flask(__name__)
@@ -7,10 +7,13 @@ api = Api(app)
 
 class IntroToWebsite(Resource):
     def get(self):
-        return "<h1>Time to Match your Car</h1>    <p>This site is a prototype API.</p>"
+        return render_template('home.html')
+
 class CarSelection(Resource):
     def get(self):
-        return "<h1>Pick your car from the drop down list</h1>"
+        return render_template('car_match.html')
+
+
 # @app.route('/', methods=['GET'])
 # def drop_down_list():
 #     return "{% for each in listStatus %} <option value="{{each}}" {% if each == "list_status" %} selected {% endif %}>{{each}}</option> {% endfor %}"

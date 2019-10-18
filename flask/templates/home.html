@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <title>Car Matching Program</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+    <style>
+      #title{
+        font-size: 24px;
+        color: blue;
+        font-weight: bold;
+      }
+      #myDIV {
+        display: none;
+        color: orangered;
+      }
+    </style>
+</head>
+<script>
+    function myFunction() {
+        var text1 = $("#text1").val();
+        var text2 = $("#text2").val();
+
+        // what i inserted
+
+        // var x = document.getElementById("myDIV");
+        // x.style.display = "block";
+
+        $.ajax({
+            url: "/join",
+            type: "POST",
+            data: { text1: text1, text2: text2 }
+        }).done(function(response) {
+            var html = "<br><br><br><p> <b> RESULT : <b><p>";
+            response = response.result;
+            $.each(response, function(key, val) {
+                console.log(val);
+                html += "<p>" + val + "<p>";
+            });
+            html += "<br>";
+            $(".show-data").append(html);
+        });
+    }
+</script>
+<body>
+  <h1<p id="title">Car Matching Program</p><br /></h1>
+  <p>Input Car Model:</p>
+  <input type="text" id="text1" name="text1" /><br /><br />
+  <p>Input Car Make:</p>
+  <input type="text" id="text1" name="text1" /><br /><br />
+  <button id="clicked" onclick="myFunction()">Submit</button>
+  <p></p>
+
+  <div id="myDIV">
+      Working!.
+  </div>
+
+  <div class="show-data"></div>
+</body>
+</html>
