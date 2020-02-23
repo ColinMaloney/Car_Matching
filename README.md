@@ -4,7 +4,7 @@ This algorithm uses DBScan to transform the car data into vectors.  From these V
 
 Title: "Powerpoint presentation"
 
-hlink</Car_Matching.pptx>
+(../Car_Matching.pptx)
 
 
 
