@@ -3,8 +3,8 @@
 This algorithm uses DBScan to transform the car data into vectors.  From these Vectors we are able to find similar cars to the one imputed.  
 
 ---
-title: "Untitled"
-output: powerpoint_presentation
+title: "Powerpoint presentation"
+output:
 ---
 
 ```{r setup, include=FALSE}
