@@ -2,9 +2,9 @@
 
 This algorithm uses DBScan to transform the car data into vectors.  From these Vectors we are able to find similar cars to the one imputed.  
 
-Title: "Powerpoint presentation"
+Title: "Powerpoint presentation"(../Car_Matching.pptx)
 
-(../Car_Matching.pptx)
+
 
 
 
